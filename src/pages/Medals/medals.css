@@ -1,0 +1,177 @@
+.search-medals {
+  .title {
+    font-size: 100px;
+    line-height: 130px;
+    margin-top: 50px;
+    margin-bottom: revert;
+  }
+  .select-wrapper {
+    display: flex;
+    max-width: 700px;
+    column-gap: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .medals-select {
+    margin-right: 2rem;
+    max-width: 29.5rem;
+  }
+}
+
+@media (min-width: 1260px) {
+  .search-medals {
+    padding-left: calc(50% - 610px);
+    padding-right: calc(50% - 610px);
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1260px) {
+  .search-medals {
+    padding-left: calc(50% - 476px);
+    padding-right: calc(50% - 476px);
+  }
+}
+
+@media (min-width: 765px) and (max-width: 992px) {
+  .search-medals {
+    padding-left: calc(50% - 364px);
+    padding-right: calc(50% - 364px);
+  }
+}
+
+@media (max-width: 765px) {
+  .search-medals {
+    padding-left: 12px;
+    padding-right: 12px;
+    .title {
+      font-size: 60px;
+      line-height: 60px;
+    }
+  }
+}
+
+.result-medals {
+  margin: 20px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  .result-header {
+    padding-bottom: 14px;
+    display: grid;
+    width: 100%;
+    grid-template: auto / 1fr 3fr 1fr 1.25fr;
+  }
+  .athletes-displayer {
+    row-gap: 24px;
+    column-gap: 0.5rem;
+    display: grid;
+    place-items: center flex-start;
+    .line {
+      background: rgb(221, 221, 221);
+      grid-column: 1 / -1;
+      height: 1px;
+      justify-self: stretch;
+    }
+    .athlete-medals-info {
+      column-gap: 0.5rem;
+      display: grid;
+      padding: 16px 0px;
+      width: 100%;
+      grid-template: auto / 1fr 3fr 1fr 1.25fr;
+      .country {
+        align-items: center;
+        display: flex;
+        color: rgb(102, 102, 102);
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        place-self: center flex-start;
+        img {
+          height: 32px;
+        }
+        p {
+          font-size: 14px;
+          padding-left: 5px;
+        }
+      }
+      .identity {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: flex-start;
+        img {
+          margin-right: 14px;
+          border-radius: 100%;
+          height: 48px;
+          width: 48px;
+        }
+        p {
+          font-size: 28px;
+        }
+      }
+      .sport-name {
+        font-size: 20px;
+      }
+      .medals-group {
+        align-items: center;
+        display: flex;
+        .medal {
+          align-items: center;
+          border-radius: 100%;
+          display: flex;
+          font-size: 16px;
+          height: 42px;
+          justify-content: center;
+          line-height: 16px;
+          margin-left: 0px;
+          min-width: 42px;
+          padding-top: 0px;
+          text-transform: capitalize;
+          &.gold {
+            background-color: rgb(252, 200, 97);
+          }
+          &.silver {
+            background-color: rgb(229, 229, 229);
+            margin-left: 12px;
+          }
+          &.bronze {
+            background-color: rgb(220, 179, 134);
+            margin-left: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 600px) and (max-width: 765px) {
+  .result-header,
+  .athlete-medals-info {
+    grid-template: auto / 1fr 2fr 1fr 1.4fr !important;
+  }
+}
+@media (max-width: 600px) {
+  .contry {
+    grid-area: flag;
+  }
+  .identity {
+    grid-area: athlete;
+  }
+  .sport-name {
+    grid-area: sport;
+  }
+  .medal {
+    grid-area: medals;
+    min-width: 36px!important;
+    height: 36px!important;
+  }
+  .result-header {
+    display: none !important;
+  }
+  .athlete-medals-info {
+    grid-template:
+      "flag medals"
+      "athlete athlete"
+      "sport sport" / 1fr 1fr !important;
+  }
+}

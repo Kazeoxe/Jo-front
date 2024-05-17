@@ -1,0 +1,237 @@
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+main {
+  min-height: 100vh;
+}
+nav {
+  position: sticky;
+  z-index: 1;
+  max-height: 6.5rem;
+  width: 100%;
+  overflow: hidden;
+  transition: max-height 250ms ease-out 0s, padding 250ms ease-out 0s;
+  border-bottom: 0.1rem solid rgb(229, 229, 229);
+  .nav-logo {
+    padding: 10px 20px;
+  }
+  .nav-container {
+    display: flex;
+    max-width: 100%;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    .nav-categories {
+      margin: 0 auto;
+      a {
+        text-decoration: none;
+        color: black;
+        padding: 0px 2rem;
+        font-size: 20px;
+        transition: transform 0.3s ease-out;
+        display: inline-block;
+        &:hover {
+          transform: translate(0, -5px);
+        }
+      }
+    }
+  }
+}
+
+.poster-image {
+  height: 675px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(paris-2024.avif);
+}
+.poster-header {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 270px;
+  .poster-title {
+    font-size: 120px;
+    line-height: 110px;
+    color: white;
+    span {
+      display: block;
+      font-size: 20px;
+    }
+  }
+  .poster-btn-wrapper {
+    box-shadow: rgba(0, 0, 0, 0.106) 0px 0.2rem 2.4rem;
+    border-radius: 6px;
+    width: 220px;
+    background-color: white;
+    padding: 20px;
+    img {
+      width: 100%;
+    }
+    .btn-explorer {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      background: rgb(239, 239, 239);
+      border: none;
+      border-radius: 4px;
+      margin-top: 80px;
+      padding: 8px 16px;
+      &:hover {
+        cursor: pointer;
+      }
+      &:focus {
+        background: rgb(206, 205, 205);
+      }
+    }
+  }
+}
+.olympic-game-wrapper {
+  margin-bottom: 80px;
+  padding: 80px calc(50% - 700px) 0 calc(50% - 700px);
+  align-items: flex-start;
+  flex-direction: row;
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+  .title {
+    margin: 0;
+    font-size: 100px;
+    text-transform: uppercase;
+    line-height: 100px;
+    flex-basis: 550px;
+  }
+  .content {
+    margin: 0;
+    flex: 1 1 0%;
+  }
+}
+
+.games-overview {
+  margin-bottom: 50px;
+  > .title {
+    border-top: 1px solid rgb(229, 229, 229);
+    font-size: 120px;
+    line-height: 120px;
+    text-transform: uppercase;
+    padding-top: 20px;
+  }
+  .games-btn-wrapper {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 250px);
+    .btn {
+      text-decoration: none;
+      color: black;
+      padding: 40px 30px; /*250px */
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: grayscale(100%);
+      height: 170px; /*250px */
+      transition: all 0.3s ease;
+      .title {
+        margin: 0;
+        font-size: 80px;
+        line-height: 80px;
+      }
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.01);
+        filter: grayscale(0%);
+      }
+      &.large {
+        grid-column: span 2;
+      }
+      &.small {
+        grid-column: span 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 1260px) {
+  .olympic-game-wrapper {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1260px) {
+  .poster-header,
+  .olympic-game-wrapper,
+  .games-overview {
+    padding-left: calc(50% - 610px);
+    padding-right: calc(50% - 610px);
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1260px) {
+  .poster-header,
+  .olympic-game-wrapper,
+  .games-overview {
+    padding-left: calc(50% - 476px);
+    padding-right: calc(50% - 476px);
+  }
+}
+
+@media (min-width: 765px) and (max-width: 992px) {
+  .poster-header,
+  .olympic-game-wrapper,
+  .games-overview {
+    padding-left: calc(50% - 364px);
+    padding-right: calc(50% - 364px);
+  }
+}
+@media (max-width: 1260px) {
+  .nav-container {
+    justify-content: center !important;
+  }
+  .nav-categories {
+    display: none;
+  }
+}
+
+@media (max-width: 765px) {
+  .poster-header {
+    justify-content: center;
+    padding: 0;
+    .poster-title {
+      display: none;
+    }
+  }
+  .olympic-game-wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
+
+    .title {
+      font-size: 60px;
+      line-height: 60px;
+    }
+    .content {
+      font-weight: normal;
+    }
+  }
+
+  .games-overview {
+    padding-left: 12px;
+    padding-right: 12px;
+    > .title {
+      font-size: 80px;
+      line-height: 80px;
+    }
+    .games-btn-wrapper {
+      display: flex;
+      flex-direction: column;
+      .title {
+        font-size: 60px !important;
+        line-height: 60px !important;
+      }
+    }
+  }
+}
